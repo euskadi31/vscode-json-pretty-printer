@@ -7,6 +7,10 @@
     "engines": {
         "vscode": "^1.27.0"
     },
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:euskadi31/vscode-json-pretty-printer.git"
+    },
     "categories": [
         "Formatters"
     ],
@@ -27,7 +31,8 @@
         "compile": "tsc -p ./ && ./build.sh ./cmd/json-pretty-print/",
         "watch": "tsc -watch -p ./",
         "postinstall": "node ./node_modules/vscode/bin/install",
-        "test": "npm run compile && node ./node_modules/vscode/bin/test"
+        "test": "npm run compile && node ./node_modules/vscode/bin/test",
+        "package": "vsce package -o json-pretty-printer.vsix --baseContentUrl ./"
     },
     "devDependencies": {
         "typescript": "^2.6.1",
