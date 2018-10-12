@@ -2,7 +2,7 @@
     "name": "json-pretty-printer",
     "displayName": "JSON Pretty Printer",
     "description": "Visual Studio Code JSON Pretty Printer",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "publisher": "euskadi31",
     "engines": {
         "vscode": "^1.27.0"
