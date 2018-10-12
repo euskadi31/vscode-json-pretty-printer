@@ -9,7 +9,7 @@
     },
     "icon": "icons/json-pretty-printer-logo.png",
     "galleryBanner": {
-        "color": "#2E323A",
+        "color": "#2d323b",
         "theme": "dark"
     },
     "repository": {
