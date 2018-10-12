@@ -1,18 +1,29 @@
 {
     "name": "json-pretty-printer",
-    "displayName": "json-pretty-printer",
+    "displayName": "JSON Pretty Printer",
     "description": "Visual Studio Code JSON Pretty Printer",
-    "version": "0.0.1",
+    "version": "1.0.0",
     "publisher": "euskadi31",
     "engines": {
         "vscode": "^1.27.0"
     },
+    "icon": "icons/json-pretty-printer-logo.png",
+    "galleryBanner": {
+        "color": "#2E323A",
+        "theme": "light"
+    },
     "repository": {
         "type": "git",
-        "url": "git@github.com:euskadi31/vscode-json-pretty-printer.git"
+        "url": "https://github.com/euskadi31/vscode-json-pretty-printer"
     },
     "categories": [
         "Formatters"
+    ],
+    "keywords": [
+        "json",
+        "pretty-print",
+        "pretty-printer",
+        "formatter"
     ],
     "activationEvents": [
         "onCommand:extension.prettyPrint"
@@ -32,7 +43,7 @@
         "watch": "tsc -watch -p ./",
         "postinstall": "node ./node_modules/vscode/bin/install",
         "test": "npm run compile && node ./node_modules/vscode/bin/test",
-        "package": "vsce package -o json-pretty-printer.vsix --baseContentUrl ./"
+        "package": "vsce package -o json-pretty-printer.vsix --baseContentUrl https://raw.githubusercontent.com/euskadi31/vscode-json-pretty-printer/master/"
     },
     "devDependencies": {
         "typescript": "^2.6.1",

@@ -1,12 +1,13 @@
+// Copyright 2018 Axel Etcheverry. All rights reserved.
+// Use of this source code is governed by a MIT
+// license that can be found in the LICENSE file.
+
 package main
 
 import (
-	"encoding/json"
 	"flag"
-	"io"
 	"log"
 	"os"
-	"strings"
 )
 
 var indentType string
@@ -18,27 +19,9 @@ func init() {
 }
 
 func main() {
-	var data interface{}
+	formatter := NewJSONPrettyPrinter(TabStyleType(indentType), indentSize)
 
-	indent := "\t"
-
-	if indentType == "space" {
-		indent = strings.Repeat(" ", indentSize)
-	}
-
-	encoder := json.NewEncoder(os.Stdout)
-	encoder.SetIndent("", indent)
-
-	decoder := json.NewDecoder(os.Stdin)
-	for {
-		if err := decoder.Decode(&data); err == io.EOF {
-			return
-		} else if err != nil {
-			log.Panic(err)
-		}
-
-		if err := encoder.Encode(data); err != nil {
-			log.Panic(err)
-		}
+	if err := formatter.Process(os.Stdin, os.Stdout); err != nil {
+		log.Panic(err)
 	}
 }
