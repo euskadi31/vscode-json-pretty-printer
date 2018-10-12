@@ -1,7 +1,25 @@
 language: go
 
 go:
-  - 1.11.x
+- 1.11.x
 
 script:
-  - go test -race ./cmd/json-pretty-print
+- go test -race ./cmd/json-pretty-print
+
+before_deploy:
+- npm install -g vsce
+- npm run package
+
+deploy:
+- provider: script
+  script: vsce publish -p $VS_TOKEN --baseContentUrl https://raw.githubusercontent.com/euskadi31/vscode-json-pretty-printer/master/
+  skip_cleanup: true
+  on:
+    repo: euskadi31/vscode-json-pretty-printer
+    branch: master
+    tags: true
+    condition: "$TRAVIS_OS_NAME = linux"
+
+env:
+  global:
+    secure: WjIKOTXS2v3jzJAHv+MEQHdAOora41i6RbGvjBTZ4bPm/v9oEGqwhI3XlRJAHygSTBBDOVd8gM9cOD2U/zE8ViSnQjABg614K043tc7WzkS6LYRzY8V5EjurXS3ehYYjFJMwDOCF40+RsQo4ziRZXKye9rpinnm8UgyugTT3It1Qgc/b3UO6dcX9iyJ2/4J/ps2aFbWJ3RIcdnQbbYtCJUygKCIUSRkWJdtlSSEha7hV48x9TLS8tkHFT67r/uktG3dA8/z//aIZ/YVXshQtvK02DyOscwgLTFSoZ5auBKiinsG6Lp1/L+TfNIJzeKYb37IQU66VgfRnrwS2YAMWbPHE+LrSmhGUaJYvB27fw7pSTreKLuMD7FWI9o7RW762b7NBisykdXUI+rMXBeWuYWdp1YqeHENWOxqxLOEuc5m3vTp5IWeI36zJwngnSwQiuDBo4dC2l1l8iBsrmEEQgmpWXPSoebJekTXHxuYqrZ8KG9lyFjVk4gOyuv5p/FicL4WWPqoFxOQfLcTjY9N52UL8w8jfBrN8BFnS7ZN7sS2lFvWFLT9xlbRADwsGVpoC2YPYCAyiYKIQnhjVT8Eq8/kIq42za+kwxfmv47dIKweYvXpWJmO4ycRgL8KZKKRNJRu3HFVDGHaj1Y/UQL5Htb6dqbuRLGxeRF+q+gfsSEo= #VS_TOKEN
