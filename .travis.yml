@@ -12,7 +12,7 @@ before_deploy:
 
 deploy:
 - provider: script
-  script: vsce publish -p $VS_TOKEN --baseContentUrl https://raw.githubusercontent.com/euskadi31/vscode-json-pretty-printer/master/
+  script: vsce publish -p $VS_TOKEN --baseContentUrl https://raw.githubusercontent.com/euskadi31/vscode-json-pretty-printer/master/ $TRAVIS_TAG
   skip_cleanup: true
   on:
     repo: euskadi31/vscode-json-pretty-printer
