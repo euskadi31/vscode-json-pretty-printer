@@ -10,7 +10,7 @@
     "icon": "icons/json-pretty-printer-logo.png",
     "galleryBanner": {
         "color": "#2E323A",
-        "theme": "light"
+        "theme": "dark"
     },
     "repository": {
         "type": "git",
@@ -37,13 +37,21 @@
             }
         ]
     },
+    "badges": [
+        {
+            "url": "https://travis-ci.org/euskadi31/vscode-json-pretty-printer.svg?branch=master",
+            "href": "https://travis-ci.org/euskadi31/vscode-json-pretty-printer",
+            "description": "Travis CI"
+        }
+    ],
     "scripts": {
         "vscode:prepublish": "npm run compile",
         "compile": "tsc -p ./ && ./build.sh ./cmd/json-pretty-print/",
         "watch": "tsc -watch -p ./",
         "postinstall": "node ./node_modules/vscode/bin/install",
         "test": "npm run compile && node ./node_modules/vscode/bin/test",
-        "package": "vsce package -o json-pretty-printer.vsix --baseContentUrl https://raw.githubusercontent.com/euskadi31/vscode-json-pretty-printer/master/"
+        "package": "npm run compile && vsce package -o json-pretty-printer.vsix --baseContentUrl https://raw.githubusercontent.com/euskadi31/vscode-json-pretty-printer/master/",
+        "publish": "npm run package && vsce publish --baseContentUrl https://raw.githubusercontent.com/euskadi31/vscode-json-pretty-printer/master/"
     },
     "devDependencies": {
         "typescript": "^2.6.1",
