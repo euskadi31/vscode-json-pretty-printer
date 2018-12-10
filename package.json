@@ -4,6 +4,10 @@
     "description": "Visual Studio Code JSON Pretty Printer",
     "version": "1.0.1",
     "publisher": "euskadi31",
+    "author": {
+      "name": "Axel Etcheverry",
+      "email": "euskadi31@gmail.com"
+    },
     "engines": {
         "vscode": "^1.27.0"
     },
