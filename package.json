@@ -7,6 +7,7 @@
     "engines": {
         "vscode": "^1.27.0"
     },
+    "license": "MIT",
     "icon": "icons/json-pretty-printer-logo.png",
     "galleryBanner": {
         "color": "#2d323b",
@@ -54,11 +55,11 @@
         "publish": "npm run package && vsce publish --baseContentUrl https://raw.githubusercontent.com/euskadi31/vscode-json-pretty-printer/master/"
     },
     "devDependencies": {
-        "typescript": "^2.6.1",
+        "typescript": "^3.2.2",
         "vscode": "^1.1.21",
         "tslint": "^5.8.0",
-        "@types/node": "^8.10.25",
-        "@types/mocha": "^2.2.42"
+        "@types/node": "^10.12.12",
+        "@types/mocha": "^5.2.5"
     },
     "dependencies": {
         "@types/strip-json-comments": "0.0.30",
