@@ -62,7 +62,6 @@
     },
     "dependencies": {
         "@types/strip-json-comments": "0.0.30",
-        "json-lexer": "^1.1.1",
         "json-to-ast": "^2.0.7",
         "strip-json-comments": "^2.0.1"
     }
