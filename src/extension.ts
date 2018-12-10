@@ -38,7 +38,7 @@ export function activate(context: vscode.ExtensionContext) {
 
         const raw = stripComments(editor.document.getText());
 
-        prettyPrint(raw, getTab(tab_type, tab_size), 0).then((content) => {
+        prettyPrint(raw, getTab(tab_type, tab_size)).then((content) => {
             return editor.edit(builder => {
                 const start = new vscode.Position(0, 0);
                 const lines = raw.split(LINE_SEPERATOR);
@@ -113,17 +113,17 @@ function visitor(ast: any, tab: string, indent: number): string {
     return data;
 }
 
-function prettyPrint(data: string, tab: string, indent: number): Promise<string> {
+export function prettyPrint(data: string, tab: string): Promise<string> {
     return new Promise((resolve, reject) => {
         let ast = parse(data, {
             loc: false
         });
 
-        resolve(visitor(ast, tab, indent) + '\n');
+        resolve(visitor(ast, tab, 0) + '\n');
     });
 }
 
-function getTab(tabStyle: string, tabSize: number): string {
+export function getTab(tabStyle: string, tabSize: number): string {
     if (tabStyle === 'space') {
         return ' '.repeat(tabSize);
     }
