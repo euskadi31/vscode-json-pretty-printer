@@ -68,6 +68,6 @@
     "dependencies": {
         "@types/strip-json-comments": "0.0.30",
         "json-to-ast": "^2.1.0",
-        "strip-json-comments": "^2.0.1"
+        "strip-json-comments": "^3.0.1"
     }
 }
