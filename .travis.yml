@@ -6,6 +6,14 @@ os:
   # - osx
   - linux
 
+addons:
+  apt:
+    packages:
+      - libasound2
+      - libxss1
+      - libgtk-3-0
+      - libnss3
+
 node_js:
   - 'stable'
   - '8'
