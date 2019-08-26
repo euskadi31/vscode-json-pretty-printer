@@ -23,7 +23,7 @@ install:
   - npm run vscode:prepublish
 
 script:
-  - npm test --silent
+  - npm test
 
 before_deploy:
 - npm install -g vsce
