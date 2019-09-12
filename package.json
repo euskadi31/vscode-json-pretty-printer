@@ -62,7 +62,7 @@
         "typescript": "^3.6.2",
         "vscode": "^1.1.36",
         "tslint": "^5.20.0",
-        "@types/node": "^12.7.4",
+        "@types/node": "^12.7.5",
         "@types/mocha": "^5.2.7"
     },
     "dependencies": {
