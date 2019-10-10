@@ -59,7 +59,7 @@
         "publish": "npm run package && vsce publish --baseContentUrl https://raw.githubusercontent.com/euskadi31/vscode-json-pretty-printer/master/"
     },
     "devDependencies": {
-        "typescript": "^3.6.3",
+        "typescript": "^3.6.4",
         "vscode": "^1.1.36",
         "tslint": "^5.20.0",
         "@types/node": "^12.11.1",
